@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%projectController.title" textFill="#491f56">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </Label>
+      <HBox>
+         <children>
+            <VBox prefWidth="82.0" spacing="12.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%projectController.lb.date" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%projectController.lb.wishes" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <DatePicker fx:id="dpDate" maxWidth="1.7976931348623157E308" promptText="%projectController.promt.date" HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="cmbTime" maxWidth="1.7976931348623157E308" promptText="%projectController.promt.time" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="taWishes" prefHeight="55.0" prefWidth="370.0" promptText="%projectController.promt.wishes" wrapText="true" />
+                  <ComboBox fx:id="cmbStatus" prefHeight="26.0" prefWidth="115.0" promptText="%projectController.lb.status" />
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%projectController.subtitle.groom">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <VBox>
+         <children>
+            <ComboBox fx:id="cmbGroom" maxWidth="1.7976931348623157E308" promptText="%projectController.cmb.lb" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="125.0" right="15.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox>
+         <children>
+            <VBox prefWidth="82.0" spacing="12.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.name" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.lastname" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.middleName" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.email" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.phone" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="tfGroomName" editable="false" prefHeight="5.0" prefWidth="381.0" promptText="%promt.name" />
+                  <TextField fx:id="tfGroomLastname" editable="false" promptText="%promt.lastname" />
+                  <TextField fx:id="tfGroomSurname" editable="false" promptText="%promt.middleName" />
+                  <TextField fx:id="tfGroomMail" editable="false" promptText="%promt.email" />
+                  <TextField fx:id="tfGroomPhone" editable="false" promptText="%promt.phone" />
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%projectController.subtitle.bride">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <VBox>
+         <children>
+            <ComboBox fx:id="cmbBride" maxWidth="1.7976931348623157E308" promptText="%projectController.cmb.lb" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="125.0" right="15.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox>
+         <children>
+            <VBox prefWidth="82.0" spacing="12.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.name" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.lastname" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.middleName" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.email" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.phone" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="tfBrideName" editable="false" prefHeight="5.0" prefWidth="381.0" promptText="%promt.name" />
+                  <TextField fx:id="tfBrideLastname" editable="false" promptText="%promt.lastname" />
+                  <TextField fx:id="tfBrideSurname" editable="false" promptText="%promt.middleName" />
+                  <TextField fx:id="tfBrideMail" editable="false" promptText="%promt.email" />
+                  <TextField fx:id="tfBridePhone" editable="false" promptText="%promt.phone" />
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="10.0" prefWidth="508.0" spacing="10.0">
+         <children>
+            <Button fx:id="ok" mnemonicParsing="false" onAction="#ButtonOk" prefHeight="26.0" prefWidth="74.0" text="%app.button.ok">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ButtonCancel" prefHeight="26.0" prefWidth="74.0" text="%app.button.cancel">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

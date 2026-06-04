@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafpin.wedding.controller.MainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="%menuBar.file">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%menuBar.edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%menuBar.help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="%tab.client">
+               <content>
+                  <SplitPane dividerPositions="0.3953333333333333" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <HBox AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="86.0" prefWidth="40.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.name" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.lastname">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.middleName">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="tfNameClient" promptText="%promt.name" />
+                                          <TextField fx:id="tfLastnameClient" promptText="%promt.lastname" />
+                                          <TextField fx:id="tfMiddleNameClient" promptText="%promt.middleName" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#clientSearch" text="%app.button.search" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="94.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnAdd" layoutX="15.0" layoutY="49.0" mnemonicParsing="false" onAction="#clientAdd" text="%app.button.add" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="125.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="5.0" layoutY="39.0" mnemonicParsing="false" onAction="#editClient" text="%app.button.edit" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="156.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="25.0" layoutY="59.0" mnemonicParsing="false" onAction="#deleteClient" text="%app.button.delete" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="186.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="35.0" layoutY="69.0" mnemonicParsing="false" onAction="#relatedProjects" text="%client.button.relatedProjects" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="216.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoClient" translateY="250.0" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="clientsTable" prefHeight="371.2" prefWidth="417.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="columnNameClient" prefWidth="75.0" text="%app.column.name" />
+                                  <TableColumn fx:id="columnLastnameClient" prefWidth="75.0" text="%app.column.lastname" />
+                                    <TableColumn fx:id="columnMiddleNameClient" prefWidth="75.0" text="%app.column.middleName" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+          <Tab fx:id="projectTab" text="%tab.project">
+               <content>
+                  <SplitPane dividerPositions="0.20766666666666667" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="771.0" prefWidth="530.0">
+                           <children>
+                              <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%project.subTitle.project" textFill="#491f56" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Label>
+                              <HBox prefHeight="26.0" prefWidth="394.0" spacing="15.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.6">
+                                 <children>
+                                    <DatePicker fx:id="dpProject" maxWidth="1.7976931348623157E308" promptText="%project.dp.promt" HBox.hgrow="ALWAYS" />
+                                    <ComboBox fx:id="cmbTimeProject" maxWidth="1.7976931348623157E308" prefWidth="0.0" promptText="%project.cmbTime.promt" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnSearchClient" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#findProjectByDate" text="%app.button.search" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="67.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="createProject" mnemonicParsing="false" onAction="#projectCreate" text="%app.button.create" translateY="30.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="66.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="btnEditClient" mnemonicParsing="false" onAction="#projectEdit" text="%app.button.edit" translateY="30.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="96.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteProject" text="%app.button.delete" translateY="30.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="127.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#projectContractors" text="%project.button.contacrtors" translateY="30.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="158.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#relatedGuests" text="%project.button.guests" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="219.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" text="%project.subTitle.report" textFill="#491f56" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="188.6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Label>
+                              <Button layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#createReport" text="%app.button.create" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="219.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="35.0" layoutY="69.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#inDetailsReport" text="%project.button.inDetail" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="249.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" maxWidth="1.7976931348623157E308" text="%project.subTitle.task" textFill="#491f56" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="280.4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Label>
+                              <HBox layoutX="10.0" layoutY="324.8" prefHeight="26.0" prefWidth="588.0" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="311.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="86.0" prefWidth="40.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%project.lb.goal">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%project.lb.status">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="tfTaskGoal" promptText="%project.lb.goal.promt" />
+                                          <ComboBox fx:id="cmbTaskStatus" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="%project.lb.status.promt" VBox.vgrow="ALWAYS" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#taskSearch" text="%app.button.search" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="371.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="45.0" layoutY="79.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#taskAdd" text="%app.button.add" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="401.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="35.0" layoutY="69.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#taskEdit" text="%app.button.edit" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="432.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="45.0" layoutY="79.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#taskDelete" text="%app.button.delete" translateY="61.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="463.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoProjects" translateY="60.0" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="498.6" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox maxHeight="1.7976931348623157E308" prefHeight="771.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%project.subTitle.project" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="projectsTable" maxHeight="1.7976931348623157E308" prefHeight="751.0" prefWidth="388.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                              <TableColumn fx:id="columnStatusProject" prefWidth="88.79995727539062" text="%project.projectTable.column.status" />
+                                                <TableColumn fx:id="columnRequirementsProject" prefWidth="90.4000244140625" text="%project.projectTable.column.wishes" />
+                                                <TableColumn fx:id="columnDateProject" prefWidth="75.0" text="%project.projectTable.column.date" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%project.subTitle.task" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tasksTable" prefHeight="751.0" prefWidth="374.0">
+                                            <columns>
+                                                <TableColumn fx:id="columnPriorityTask" prefWidth="50.39996337890625" text="%project.taskTable.column.priority" />
+                                              <TableColumn fx:id="columnGoalTask" prefWidth="124.79999542236328" text="%project.taskTable.column.goal" />
+                                                <TableColumn fx:id="columnStatusTask" prefWidth="128.800048828125" text="%project.taskTable.column.status" />
+                                                <TableColumn fx:id="columnCompleteDateTask" prefWidth="105.59991455078125" text="%project.taskTable.column.date" />
+                                                <TableColumn fx:id="columnPriceTask" prefWidth="108.80001831054688" text="%project.taskTable.column.price" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+            <Tab text="%tab.report">
+               <content>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="26.0" prefWidth="394.0" spacing="15.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <ComboBox fx:id="cmbProjectReport" maxWidth="1.7976931348623157E308" prefWidth="0.0" promptText="%cmbProject.promt" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#searchReport" text="%app.button.search" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="36.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#regenerateReport" text="%app.button.regenerate" translateY="-30.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="97.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteReport" text="%app.button.delete" translateY="-30.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="128.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoReports" translateY="-30.0" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="159.4" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="reportsTable" layoutX="147.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="columnTotalBudgetReport" prefWidth="738.39990234375" text="%report.table.column.budget" />
+                                    <TableColumn fx:id="columnAmountOfGuestsReport" prefWidth="738.39990234375" text="%report.table.column.guestAmount" />
+                                    <TableColumn fx:id="columnCompletedTasks" prefWidth="738.39990234375" text="%report.table.column.taskAmount" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab text="%tab.guest">
+               <content>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="86.0" prefWidth="40.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.name" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.lastname">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.middleName">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="tfNameGuest" promptText="%promt.name" />
+                                          <TextField fx:id="tfLastnameGuest" promptText="%promt.lastname" />
+                                          <TextField fx:id="tfMiddleNameGuest" promptText="%promt.middleName" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="-51.4" spacing="8.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="96.4">
+                                 <children>
+                                    <ComboBox fx:id="cmbProjectGuest" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="360.0" promptText="%cmbProject.promt" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#searchGuest" text="%app.button.search" translateY="-20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="147.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" mnemonicParsing="false" onAction="#addGuestToProject" text="%app.button.addToProject" translateY="-20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="178.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#createGuest" text="%app.button.create" translateY="-20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="209.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#editGuest" text="%app.button.edit" translateY="-20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="239.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" mnemonicParsing="false" onAction="#deleteGuest" text="%app.button.delete" translateY="-20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="270.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="15.0" layoutY="280.0" mnemonicParsing="false" onAction="#deleteGuestFromProject" text="%app.button.deleteFromProject" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoGuest" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="310.6" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="guestTable" layoutX="68.8" prefHeight="771.2" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="columnNameGuest" prefWidth="747.1998901367188" text="%app.column.name" />
+                                    <TableColumn fx:id="columnLastnameGuest" prefWidth="747.1998901367188" text="%app.column.lastname" />
+                                    <TableColumn fx:id="columnMiddleNameGuest" prefWidth="747.1998901367188" text="%app.column.middleName" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab text="%tab.contractor">
+               <content>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                    </items>
+                  </SplitPane>
+               </content>
+               <content>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="86.0" prefWidth="40.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.name" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.lastname">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.phone">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%lb.email">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="tfContractorName" promptText="%promt.name" />
+                                          <TextField fx:id="tfContractorLastname" promptText="%promt.lastname" />
+                                          <TextField fx:id="tfContractorPhone" promptText="%promt.phone" />
+                                          <TextField fx:id="tfContractorMail" promptText="%promt.email" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#searchContractor" text="%app.button.search" translateY="-26.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="155.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#addContractor" text="%app.button.add" translateY="-26.4" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="185.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#editContractor" text="%app.button.edit" translateY="-55.5" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="246.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteContractor" text="%app.button.delete" translateY="-55.5" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="276.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label alignment="TOP_CENTER" text="%contractor.subTitle.service" translateY="-55.5" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="312.4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></Label>
+                              <HBox layoutX="10.0" layoutY="10.0" translateY="-45.5" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="335.0">
+                                 <children>
+                                    <VBox prefHeight="86.0" prefWidth="0.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%app.description" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%contractor.price" />
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%contractor.prepayment" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="tfDescriptionService" prefHeight="53.0" prefWidth="311.0" promptText="%contractor.description.promt" />
+                                          <TextField fx:id="tfPriceService" promptText="%contractor.price.promt" />
+                                          <TextField fx:id="tfPrepaymentService" prefHeight="53.0" prefWidth="311.0" promptText="%contractor.prepayment.promt" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchService" text="%app.button.search" translateY="-45.8" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="426.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addService" text="%app.button.add" translateY="-45.8" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="457.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#editService" text="%app.button.edit" translateY="-45.8" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="487.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteService" text="%app.button.delete" translateY="-45.8" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="518.2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoContractor" translateY="-45.8" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="548.8" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="771.0" prefWidth="498.0">
+                                       <children>
+                                          <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%contractor.subTitle.contractor" />
+                                          <TableView fx:id="contractorsTable" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                              <TableColumn fx:id="columnContractorName" prefWidth="75.0" text="%app.column.name" />
+                                              <TableColumn fx:id="columnContractorLastname" prefWidth="75.0" text="%app.column.lastname" />
+                                                <TableColumn fx:id="columnContractorMail" prefWidth="75.0" text="%lb.email" />
+                                                <TableColumn fx:id="columnContractorPhone" prefWidth="75.0" text="%lb.phone" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="%contractor.subTitle.service" />
+                                          <TableView fx:id="servicesTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                              <TableColumn fx:id="columnDescriptionService" prefWidth="75.0" text="%app.description" />
+                                              <TableColumn fx:id="columnPriceService" prefWidth="75.0" text="%contractor.price" />
+                                                <TableColumn fx:id="columnPrepaymentService" prefWidth="75.0" text="%contractor.prepayment" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+            <Tab text="%tab.portfolio">
+               <content>
+                  <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="portfolioTable" layoutX="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.3999999999999773">
+                                <columns>
+                                    <TableColumn fx:id="columnPortfolioDescription" prefWidth="148.00003051757812" text="%app.description" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="345.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="405.0">
+                                 <children>
+                                    <VBox maxWidth="1.7976931348623157E308" prefHeight="86.0" prefWidth="40.0" spacing="8.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="3.0" text="%app.description" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="0.0" text="%portfolio.lb.contractor">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="0.0" text="%portfolio.lb.image">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="0.0" text="%portfolio.lb.newFileName">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextArea fx:id="taDescriptionPortfolio" prefHeight="200.0" prefWidth="200.0" promptText="%portfolio.description.promt" wrapText="true" />
+                                          <ComboBox fx:id="cmbContractorPortfolio" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="294.0" promptText="%portfolio.contractor.promt" />
+                                          <TextField fx:id="tfLinkPortfolio" onMouseClicked="#clickOnChooseFile" promptText="%portfolio.image.promt" />
+                                          <TextField fx:id="tfNewFileNamePortfolio" promptText="%portfolio.newFileName.promt" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#searchPortfolio" text="%app.button.search" translateY="41.6" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="494.8">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addPortfolio" text="%app.button.add" translateY="41.6" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="525.4">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#editPortfolio" text="%app.button.edit" translateY="41.6" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="556.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#deletePortfolio" text="%app.button.delete" translateY="41.6" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="586.6">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="lbInfoPortfolio" translateY="41.6" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="617.2" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <StackPane prefHeight="771.2" prefWidth="840.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <ImageView fx:id="portfolioImageView" fitHeight="677.0" fitWidth="762.0" pickOnBounds="true" preserveRatio="true">
+                                       <cursor>
+                                          <Cursor fx:constant="NW_RESIZE" />
+                                       </cursor>
+                                       <image>
+                                          <Image url="@no_img_png/no_img.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+        </tabs>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TabPane>
+   </children>
+</VBox>

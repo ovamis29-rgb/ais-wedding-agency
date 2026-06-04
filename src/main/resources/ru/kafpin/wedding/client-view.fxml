@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%clientController.title" textFill="#491f56" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin></Label>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%clientController.subTitle.personalData">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox spacing="12.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.name" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.lastname" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.middleName" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.email" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%lb.phone" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.gender" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="tfName" promptText="%promt.name" />
+                  <TextField fx:id="tfLastname" promptText="%promt.lastname" />
+                  <TextField fx:id="tfMiddleName" promptText="%promt.middleName" />
+                  <TextField fx:id="tfMail" promptText="%promt.email" />
+                  <TextField fx:id="tfPhone" promptText="%promt.phone" />
+                  <HBox accessibleText="М" prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <CheckBox fx:id="male" mnemonicParsing="false" text="%clientController.gender.male" />
+                        <CheckBox fx:id="female" mnemonicParsing="false" text="%clientController.gender.female" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="%clientController.subTitle.asportData" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </Label>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox spacing="12.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.seria" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.number" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.whenIssued" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.registrationDate" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.whoIssued" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.birthPlace" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="106.4" text="%clientController.lb.adressOfRegistratiton" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="86.0" prefWidth="339.0" spacing="4.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <TextField fx:id="tfSeria" promptText="%clientController.promt.seria" />
+                  <TextField fx:id="tfNumber" promptText="%clientController.promt.number" />
+                  <DatePicker fx:id="dpWhenIssued" maxWidth="1.7976931348623157E308" promptText="%clientController.promt.whenIssued" />
+                  <DatePicker fx:id="dpDateOfRegistration" maxWidth="1.7976931348623157E308" promptText="%clientController.promt.registrationDate" />
+                  <TextField fx:id="tfWhoIssued" promptText="%clientController.promt.whoIssued" />
+                  <TextField fx:id="tfPlaceOfBirth" promptText="%clientController.promt.birthPlace" />
+                  <TextField fx:id="tfAdressOfRegistration" promptText="%clientController.promt.adressOfRegistratiton" />
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="ok" mnemonicParsing="false" onAction="#ClientOk" prefHeight="26.0" prefWidth="74.0" text="%app.button.ok">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#CancelClient" prefHeight="26.0" prefWidth="74.0" text="%app.button.cancel">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
