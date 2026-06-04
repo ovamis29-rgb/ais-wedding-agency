@@ -4646,3 +4646,133 @@ Caused by: java.lang.NullPointerException: status is marked non-null but is null
 14:44:01.355 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Успешно удален проект: id = 18
 14:44:02.787 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение закрыто
 14:44:02.788 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение остановлено
+19:49:29.628 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение запущено
+19:49:29.803 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка en
+19:49:40.513 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали en
+19:49:40.563 [JavaFX Application Thread] DEBUG ru.kafpin.wedding.util.DBHelper - Загружены настройки подключения (url, name)
+19:49:40.567 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем ggfg
+19:49:41.350 [JavaFX Application Thread] ERROR ru.kafpin.wedding.MainApplication - Ошибка подключения для пользователя ggfg
+org.postgresql.util.PSQLException: �����: ������������ "ggfg" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at ru.kafpin.wedding/ru.kafpin.wedding.util.DBHelper.initConnection(DBHelper.java:40)
+	at ru.kafpin.wedding/ru.kafpin.wedding.MainApplication.start(MainApplication.java:62)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+19:49:53.189 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка en
+19:49:55.838 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Язык изменён на ru_RU
+19:49:55.885 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+19:49:58.546 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали ru_RU
+19:49:58.549 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем hgj
+19:49:58.833 [JavaFX Application Thread] ERROR ru.kafpin.wedding.MainApplication - Ошибка подключения для пользователя hgj
+org.postgresql.util.PSQLException: �����: ������������ "hgj" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at ru.kafpin.wedding/ru.kafpin.wedding.util.DBHelper.initConnection(DBHelper.java:40)
+	at ru.kafpin.wedding/ru.kafpin.wedding.MainApplication.start(MainApplication.java:62)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+19:56:02.891 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+19:56:04.270 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Пользователь отменил вход, выход
+19:56:04.356 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение остановлено
+20:36:18.640 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение запущено
+20:36:18.684 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+20:36:28.814 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали ru_RU
+20:36:28.883 [JavaFX Application Thread] DEBUG ru.kafpin.wedding.util.DBHelper - Загружены настройки подключения (url, name)
+20:36:28.885 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем maanger
+20:36:29.688 [JavaFX Application Thread] ERROR ru.kafpin.wedding.MainApplication - Ошибка подключения для пользователя maanger
+org.postgresql.util.PSQLException: �����: ������������ "maanger" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at ru.kafpin.wedding/ru.kafpin.wedding.util.DBHelper.initConnection(DBHelper.java:40)
+	at ru.kafpin.wedding/ru.kafpin.wedding.MainApplication.start(MainApplication.java:62)
+	at javafx.graphics/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+20:36:31.926 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+20:36:39.174 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали ru_RU
+20:36:39.180 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем manager
+20:36:39.677 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение установлено
+20:36:39.678 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Пользователь manager успешно подключился
+20:36:40.370 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Инициализация MainController
+20:36:40.456 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 17 клиентов
+20:36:40.693 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 16 проектов
+20:36:40.842 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 16 отчетов
+20:36:40.857 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 гостей
+20:36:40.993 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 подрядчиков
+20:36:41.012 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 12 портфолио
+20:37:13.648 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение закрыто
+20:37:13.648 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение остановлено
+20:39:54.540 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение запущено
+20:39:54.580 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+20:40:02.129 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали ru_RU
+20:40:02.140 [JavaFX Application Thread] DEBUG ru.kafpin.wedding.util.DBHelper - Загружены настройки подключения (url, name)
+20:40:02.141 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем manager
+20:40:02.841 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение установлено
+20:40:02.842 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Пользователь manager успешно подключился
+20:40:03.462 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Инициализация MainController
+20:40:03.513 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 17 клиентов
+20:40:03.630 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 16 проектов
+20:40:03.773 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 16 отчетов
+20:40:03.779 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 гостей
+20:40:03.919 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 подрядчиков
+20:40:03.936 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 12 портфолио
+20:40:10.493 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение закрыто
+20:40:10.498 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение остановлено
+20:40:39.987 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение запущено
+20:40:40.029 [JavaFX Application Thread] INFO  r.k.wedding.util.LanguageManager - Загружены настройки языка ru_RU
+20:40:46.980 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Загружены ресурсы для локали ru_RU
+20:40:46.987 [JavaFX Application Thread] DEBUG ru.kafpin.wedding.util.DBHelper - Загружены настройки подключения (url, name)
+20:40:46.995 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Подключение к jdbc:postgresql://localhost:5432/postgres пользователем manager
+20:40:47.735 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение установлено
+20:40:47.736 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Пользователь manager успешно подключился
+20:40:48.375 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Инициализация MainController
+20:40:48.423 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 17 клиентов
+20:40:48.542 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Загружено 16 проектов
+20:40:48.671 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 16 отчетов
+20:40:48.679 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 гостей
+20:40:48.775 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 22 подрядчиков
+20:40:48.793 [JavaFX Application Thread] INFO  r.k.w.controller.MainController - Найдено 12 портфолио
+20:41:02.625 [JavaFX Application Thread] INFO  ru.kafpin.wedding.util.DBHelper - Соединение закрыто
+20:41:02.626 [JavaFX Application Thread] INFO  ru.kafpin.wedding.MainApplication - Приложение остановлено
