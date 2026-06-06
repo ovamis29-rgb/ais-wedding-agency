@@ -52,6 +52,9 @@ public class LoginController {
             logger.error("Ошибка загрузки языка", e);
             return;
         }
+        chRussia.setAllowIndeterminate(false);
+        chUSA.setAllowIndeterminate(false);
+        chGermany.setAllowIndeterminate(false);
         language = properties.getProperty("app.language", "en").trim();
         chUSA.setSelected("en".equals(language));
         chRussia.setSelected("ru_RU".equals(language));
@@ -63,6 +66,8 @@ public class LoginController {
                 LanguageManager.saveLanguage(new Locale("ru","RU"));
                 result = new LoginResult(null, null, true);
                 ((Stage) chRussia.getScene().getWindow()).close();
+            } else {
+            chRussia.setSelected(true);
             }
         });
         chUSA.setOnAction(actionEvent -> {
@@ -72,6 +77,8 @@ public class LoginController {
                 LanguageManager.saveLanguage(Locale.ENGLISH);
                 result = new LoginResult(null, null, true);
                 ((Stage) chUSA.getScene().getWindow()).close();
+            } else {
+                chUSA.setSelected(true);
             }
         });
         chGermany.setOnAction(actionEvent -> {
@@ -81,6 +88,8 @@ public class LoginController {
                 LanguageManager.saveLanguage(Locale.GERMANY);
                 result = new LoginResult(null, null, true);
                 ((Stage) chGermany.getScene().getWindow()).close();
+            }else {
+                chGermany.setSelected(true);
             }
         });
         btnEnter.setOnAction(event -> {
