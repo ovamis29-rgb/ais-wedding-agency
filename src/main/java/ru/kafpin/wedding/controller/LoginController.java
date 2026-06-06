@@ -99,14 +99,12 @@ public class LoginController {
                 new Alert(Alert.AlertType.WARNING,
                         bundle.getString("loginDialog.ex.login"),
                         ButtonType.OK).showAndWait();
-                return;
-            }
+                return;}
             if (p.isEmpty()) {
                 new Alert(Alert.AlertType.WARNING,
                         bundle.getString("loginDialog.ex.password"),
                         ButtonType.OK).showAndWait();
-                return;
-            }
+                return;}
             result = new LoginResult(u, p, false);
             ((Stage) btnEnter.getScene().getWindow()).close();
         });
